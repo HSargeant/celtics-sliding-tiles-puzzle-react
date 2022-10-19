@@ -41,7 +41,7 @@ p {
 #gameBoard {
   display: flex;
   flex-wrap: wrap;
-  width: min(60%,80vh, 800px);
+  width: min(60%,80vh, 500px);
   border: 15px solid #006532;
   border-radius: 10px;
   box-shadow: 4px 4px 0px 0px #767676;
