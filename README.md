@@ -1,3 +1,16 @@
+# Celtics Sliding Puzzle App
+
+A puzzle based on the old fashioned sliding tiles puzzles built using React
+
+**Link to project:** https://celtics-sliding-puzzle.netlify.app/
+
+![Preview](https://images4.imagebam.com/89/5f/b9/MEG2PNX_o.png)
+
+## How It's Made:
+
+**Tech used:** React, JSX, HTML, CSS, JavaScript
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
