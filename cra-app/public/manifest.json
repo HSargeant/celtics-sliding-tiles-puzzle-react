@@ -1,0 +1,25 @@
+{
+  "short_name": "Celtics Sliding Puzzle",
+  "name": "Celtics Sliding Puzzle",
+  "icons": [
+    {
+      "src": "boston-celtics-1880123-1593226.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "boston-celtics-1880123-1593226.ico",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "boston-celtics-1880123-1593226.ico",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
