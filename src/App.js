@@ -25,6 +25,8 @@ const App = () => {
   
   
   const Winner = (props) => {
+    
+    setShowMoves(false)
     return (
       <h2 >You Solved it! It took you {props.moves} moves!</h2>
     )
@@ -53,9 +55,10 @@ const App = () => {
       )
   }
 
-  const [grid, setGrid] = React.useState([...gridWithBlank].map(x => [...x]))
-  const [isWin, setIsWin] = React.useState(false)
-  const [moveCount, setMoveCount] = React.useState(0)
+  const [grid, setGrid] = useState([...gridWithBlank].map(x => [...x]))
+  const [isWin, setIsWin] = useState(false)
+  const [moveCount, setMoveCount] = useState(0)
+  const [showMoves,setShowMoves] = useState(false)
   
   const blankSubArr = grid.findIndex(x => x.includes(blankUrl))
   const blankIndex = grid[blankSubArr].indexOf(blankUrl)
@@ -181,6 +184,7 @@ return curGrid
             checkWin(gridWithBlank, modifiedArr)
             setGrid([...modifiedArr].map(x=>x))
             setMoveCount(moveCount + 1)
+            setShowMoves(true)
           } else if (valInd - blankIndex === -1  && blankIndex % gridDimension) {
             // move left
             const modifiedArr = []
@@ -191,10 +195,11 @@ return curGrid
                 modifiedArr.push(newGrid[i])
               }
             }
-  
+            
             checkWin(gridWithBlank, modifiedArr)
             setGrid([...modifiedArr].map(x=>x))
             setMoveCount(moveCount + 1)
+            setShowMoves(true)
           }
         } else if (arrInd !== blankSubArr && valInd === blankIndex) {
           if (arrInd - blankSubArr === 1) {
@@ -205,10 +210,11 @@ return curGrid
             // move up
             setGrid([...moveBlankUp(newGrid, blankUrl)].map(x=>x))
             setMoveCount(moveCount + 1)
+            setShowMoves(true)
           }
         }
       }
-      
+      console.log(showMoves,moveCount)
       return (
             <Grid 
             container
@@ -226,7 +232,7 @@ return curGrid
             
             </Grid>
             <Grid item  >
-            {moveCount>0&&<span >Moves: {moveCount}</span>}
+            {(moveCount>0&&showMoves)&&<span >Moves: {moveCount}</span>}
             
             </Grid>
           
