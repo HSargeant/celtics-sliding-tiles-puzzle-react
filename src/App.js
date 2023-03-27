@@ -1,9 +1,9 @@
 import './App.css';
 import React from "react"
+import { Box, Button, Container, Grid,} from '@mui/material';
 
 const App = () => {
   const gameGrid = [["https://images4.imagebam.com/b8/6c/28/MEFDFFL_o.png","https://images4.imagebam.com/40/68/bc/MEFDFFK_o.png","https://images4.imagebam.com/6e/73/53/MEFDFFJ_o.png"],["https://images4.imagebam.com/ef/91/bf/MEFDFFI_o.png","https://images4.imagebam.com/bd/ce/07/MEFDFFH_o.png","https://images4.imagebam.com/4e/a9/4d/MEFDFFG_o.png"],["https://images4.imagebam.com/cc/be/2e/MEFDFFF_o.png","https://images4.imagebam.com/a0/8a/db/MEFDFFE_o.png","https://images4.imagebam.com/c4/91/a3/MEFDFFD_o.png"]]
-
 
   const blankSpace = [0,gameGrid[0].length-1]
   
@@ -26,28 +26,30 @@ const App = () => {
   
   const Winner = (props) => {
     return (
-      <h2>You Solved it! It took you {props.moves} moves!</h2>
+      <h2 >You Solved it! It took you {props.moves} moves!</h2>
     )
   }
   
   
   const GameBoard = (props) => {
       return(
-          <section id='gameBoard'>
+          <Grid container id='gameBoard'>
               {props.grid.map((arr, arrInd) => {
                   return (
                       arr.map((val, valInd) => {
                           return (
+                            
                               <div className='gameSquare' onClick={() => {
                                 return props.onMove(arrInd,valInd)
                               }}>
                                 <img src={val} alt={`Tile ${valInd+1}`} id={val} />
                               </div>
+                              
                           )
                       })
                   )
               })}
-          </section>
+          </Grid>
       )
   }
 
@@ -207,17 +209,32 @@ return curGrid
       }
       
       return (
-            <div className="container">
-          <div>
-              <button onClick={() => shuffleGrid(grid)}>Shuffle</button>
-              <button onClick={() => resetGame()}>New Game</button>
-          </div>
+            <Grid 
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            >
+        <Grid item  >
           
+          <h1 style={{marginBottom:0}}>Boston Celtics Sliding Puzzle</h1>
+        </Grid>
+            <Grid item pt={2} pb={2} >
+            <Button variant="contained" className="button" onClick={() => shuffleGrid(grid)} style={{backgroundColor:"#222"}}>Shuffle</Button>
+            <Button variant="contained" style={{marginLeft:"10px",backgroundColor:"#222"}} onClick={() => resetGame()}>New Game</Button>
+            </Grid>
+          
+          <Grid item  container justifyContent="center"
+            alignItems="center" xl={2}>
               {isWin ?
                 <Winner moves={moveCount} /> :
                 <GameBoard onMove={(arrInd, valInd) => handleMove(arrInd, valInd)} grid={grid} />
               }
-            </div>
+              </Grid>
+              <footer>
+          <p>By <a href="https://hendersonsargeant.netlify.app/">Henderson Sargeant</a></p>
+        </footer>
+            </Grid>
       )
       
   }

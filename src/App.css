@@ -15,13 +15,23 @@ button {
 
 h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  
+}
+
+@media only screen and (max-width: 525px) {
+  h1 {
+    /* display:none; */
+    font-size: 1.6rem;
+    
+  }
 }
 
 h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 img {
@@ -37,9 +47,9 @@ p {
 
 
 #gameBoard {
-  display: flex;
-  flex-wrap: wrap;
-  width: min(60%,80vh, 500px);
+  /* display: flex;
+  flex-wrap: wrap; */
+  width: min(100%,80vh, 500px);
   border: 15px solid #006532;
   border-radius: 10px;
   box-shadow: 4px 4px 0px 0px #767676;
@@ -49,10 +59,10 @@ p {
   flex-basis: 33.3333333%;
 }
 
-.container{
+/* .container{
       display: grid;
             place-items:  center;
-}
+} */
 body{
   background-image: url("./background.jpg");
   background-color: #AC7229;
