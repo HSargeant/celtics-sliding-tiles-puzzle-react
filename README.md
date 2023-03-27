@@ -4,7 +4,7 @@ A puzzle based on the old fashioned sliding tiles puzzles built using React
 
 **Link to project:** https://celtics-sliding-puzzle.netlify.app/
 
-![Preview](https://images4.imagebam.com/89/5f/b9/MEG2PNX_o.png)
+![Preview](https://images4.imagebam.com/27/24/7a/MEG2POC_o.png)
 
 ## How It's Made:
 
