@@ -44,6 +44,12 @@ p {
   font-size: 1.25rem;
   font-weight:700;
 }
+span{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  font-weight:700;
+
+}
 
 
 #gameBoard {

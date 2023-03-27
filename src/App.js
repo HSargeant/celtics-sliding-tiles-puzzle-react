@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react"
+import React, { useState } from "react"
 import { Box, Button, Container, Grid,} from '@mui/material';
 
 const App = () => {
@@ -137,6 +137,7 @@ return curGrid
 
 
   const shuffleGrid = () => {
+    setMoveCount(0)
       setIsWin(false)
       const tempFlatGrid = ([...grid].map(x => [...x])).flat()
       
@@ -217,11 +218,16 @@ return curGrid
             >
         <Grid item  >
           
-          <h1 style={{marginBottom:0}}>Boston Celtics Sliding Puzzle</h1>
+          <h1 style={{margin:"1px auto"}}>Boston Celtics Sliding Puzzle</h1>
         </Grid>
             <Grid item pt={2} pb={2} >
             <Button variant="contained" className="button" onClick={() => shuffleGrid(grid)} style={{backgroundColor:"#222"}}>Shuffle</Button>
             <Button variant="contained" style={{marginLeft:"10px",backgroundColor:"#222"}} onClick={() => resetGame()}>New Game</Button>
+            
+            </Grid>
+            <Grid item  >
+            {moveCount>0&&<span >Moves: {moveCount}</span>}
+            
             </Grid>
           
           <Grid item  container justifyContent="center"
