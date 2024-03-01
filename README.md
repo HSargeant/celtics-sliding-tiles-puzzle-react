@@ -8,7 +8,7 @@ A puzzle based on the old fashioned sliding tiles puzzles built using React
 
 ## How It's Made:
 
-**Tech used:** React, JSX, HTML, CSS, JavaScript
+**Tech used:** React, CSS
 
 
 # Getting Started with Create React App
